@@ -6,16 +6,37 @@ export class RestaurantController extends CrudController {
     req: Request<import("express-serve-static-core").ParamsDictionary>,
     res: Response
   ): void {
-    throw new Error("Method not implemented.");
+    console.log(req.body);
+    res.status(201).json({
+      status: "success",
+      data: {
+        restaurant: "McDonalds",
+      },
+    });
+  }
+
+  public readAll(
+    req: Request<import("express-serve-static-core").ParamsDictionary>,
+    res: Response
+  ): void {
+    res.status(200).json({
+      status: "success",
+      data: {
+        restaurant: ["McDonalds", "Wendys"],
+      },
+    });
   }
 
   public read(
     req: Request<import("express-serve-static-core").ParamsDictionary>,
     res: Response
   ): void {
-    res.json({
+    console.log(req.params);
+    res.status(200).json({
       status: "success",
-      restaurant: "McDonalds",
+      data: {
+        restaurant: "McDonalds",
+      },
     });
   }
 
@@ -23,13 +44,21 @@ export class RestaurantController extends CrudController {
     req: Request<import("express-serve-static-core").ParamsDictionary>,
     res: Response
   ): void {
-    throw new Error("Method not implemented.");
+    console.log(req.params.id);
+    res.status(200).json({
+      status: "success",
+      data: {
+        restaurant: "McDonalds",
+      },
+    });
   }
 
   public delete(
     req: Request<import("express-serve-static-core").ParamsDictionary>,
     res: Response
   ): void {
-    throw new Error("Method not implemented.");
+    res.status(204).json({
+      status: "success",
+    });
   }
 }
