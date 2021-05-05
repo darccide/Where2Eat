@@ -1,5 +1,4 @@
 import express, { Request, Response } from "express";
-import { restaurantRouter } from "..";
 import { restaurantController } from "../../controllers";
 
 export const router = express.Router({

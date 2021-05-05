@@ -1,6 +1,7 @@
 require("dotenv").config();
 import express from "express";
 import morgan from "morgan";
+import pool from "./db";
 import { PORT, API_BASE_PATH } from "./config/constants";
 import { restaurantRouter } from "./routes";
 
