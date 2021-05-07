@@ -19,21 +19,21 @@ export class RestaurantController {
       const client: PoolClient = await pool.connect();
       const sql = CREATE_RESTAURANT;
 
-      if (req.body.name.trim() == "") {
-        res.status(400).json({
-          message: "Name cannot be blank",
-        });
-      }
-      if (req.body.location.trim() == "") {
-        res.status(400).json({
-          message: "location cannot be blank",
-        });
-      }
-      if (typeof req.body.price_range != "number") {
-        res.status(400).json({
-          message: "price_range must be a number",
-        });
-      }
+      //   if (req.body.name.trim() == "") {
+      //     res.status(400).send({
+      //       message: "Name cannot be blank",
+      //     });
+      //   }
+      //   if (req.body.location.trim() == "") {
+      //     res.status(400).send({
+      //       message: "location cannot be blank",
+      //     });
+      //   }
+      //   if (typeof req.body.price_range != "number") {
+      //     res.status(400).send({
+      //       message: "price_range must be a number",
+      //     });
+      //   }
 
       const { rows }: QueryResult = await client.query(sql, [
         req.body.name,
@@ -92,11 +92,11 @@ export class RestaurantController {
 
       client.release();
 
-      if (results == undefined) {
-        res.status(404).json({
-          message: "That id does not exist",
-        });
-      }
+      //   if (results == undefined) {
+      //     res.status(404).send({
+      //       message: "That id does not exist",
+      //     });
+      //   }
 
       res.status(200).json({
         status: "success",
@@ -116,21 +116,21 @@ export class RestaurantController {
       const client: PoolClient = await pool.connect();
       const sql = UPDATE_RESTAURANT;
 
-      if (req.body.name.trim() == "") {
-        res.status(400).json({
-          message: "Name cannot be blank",
-        });
-      }
-      if (req.body.location.trim() == "") {
-        res.status(400).json({
-          message: "location cannot be blank",
-        });
-      }
-      if (typeof req.body.price_range != "number") {
-        res.status(400).json({
-          message: "price_range must be a number",
-        });
-      }
+      //   if (req.body.name.trim() == "") {
+      //     res.status(400).send({
+      //       message: "Name cannot be blank",
+      //     });
+      //   }
+      //   if (req.body.location.trim() == "") {
+      //     res.status(400).send({
+      //       message: "location cannot be blank",
+      //     });
+      //   }
+      //   if (typeof req.body.price_range != "number") {
+      //     res.status(400).send({
+      //       message: "price_range must be a number",
+      //     });
+      //   }
 
       const { rows }: QueryResult = await client.query(sql, [
         req.body.name,
@@ -142,11 +142,11 @@ export class RestaurantController {
 
       client.release();
 
-      if (results == undefined) {
-        res.status(404).json({
-          message: "That id does not exist",
-        });
-      }
+      //   if (results == undefined) {
+      //     res.status(404).send({
+      //       message: "That id does not exist",
+      //     });
+      //   }
 
       res.status(200).json({
         status: "success",
@@ -174,11 +174,11 @@ export class RestaurantController {
 
       client.release();
 
-      if (results == undefined) {
-        res.status(404).json({
-          message: "That id does not exist",
-        });
-      }
+      //   if (results == undefined) {
+      //     res.status(404).send({
+      //       message: "That id does not exist",
+      //     });
+      //   }
 
       res.status(200).json({
         status: "success",
